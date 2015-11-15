@@ -24,6 +24,9 @@ class VCOscillatorViewController: UIViewController {
         
         AKOrchestra.addInstrument(vcoInstrument)
         
+        let amp = AKAmplifier(input: vcoInstrument.output)
+        AKOrchestra.addInstrument(amp)
+        amp.start()
         amplitudeSlider.property = vcoInstrument.amplitude
         frecuencySlider.property = note.frequency
         
